@@ -157,6 +157,33 @@
   overflow-y: scroll;
 }
 
+.user-sms{
+  text-align: end;
+  width: 100%;
+}
+
+.user-sms p{
+  max-width: 50%;
+  display: inline-block;
+  padding: 8px;
+  margin: 20px 30px;
+  background-color: chartreuse;
+}
+
+.pc-sms{
+  text-align: start;
+  width: 100%;
+}
+
+.pc-sms p{
+  max-width: 50%;
+  display: inline-block;
+  padding: 8px;
+  margin: 20px 30px;
+  background-color: #fff;
+}
+
+
 /* footer */
 .footer{
   height: 60px;
