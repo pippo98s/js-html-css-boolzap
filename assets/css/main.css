@@ -150,6 +150,8 @@
   cursor: pointer;
 }
 
+
+/* chat */
 .chat{
   height: calc(100vh - 120px);
   min-height: 365px;
