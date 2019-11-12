@@ -1,0 +1,64 @@
+/* general rules */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#contenitor{
+  display: flex;
+}
+
+/* left side */
+#left-side{
+  width: 30%;
+  height: 100vh;
+  background-color: #fff;
+  border-right: 1.5px solid #e4e4e4;
+}
+
+.nav{
+  width: 100%;
+  height: 60px;
+  background-color: #f2f2f2;
+}
+
+.notification{
+  width: 100%;
+  height: 90px;
+  background-color: #9de1fe;
+}
+
+.search-box{
+  height: 35px;
+  background-color: #f2f2f2;
+}
+
+/* friend list */
+.list{
+  height: calc(100vh - 185px);
+  min-height: 300px;
+  overflow-y: scroll;
+  background-color: #fff;
+}
+
+
+/* right side */
+#right-side{
+  width: 70%;
+  height: 100vh;
+}
+
+.chat{
+  height: calc(100vh - 120px);
+  min-height: 365px;
+  background: url(https://web.whatsapp.com/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png) #e5ddd5;
+  overflow-y: scroll;
+}
+
+/* footer */
+.footer{
+  height: 60px;
+  width: 100%;
+  background-color: #f2f2f2;
+}
