@@ -212,3 +212,8 @@
 .footer i:hover{
   cursor: pointer;
 }
+
+/* template */
+.template{
+  display: none;
+}
