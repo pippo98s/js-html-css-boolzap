@@ -24,9 +24,10 @@ $(document).ready(function(){
   $(".search-bar").keyup(function(){
    
     $(".name").each(function(){
-      
       var name = $(this).text();
-      var n = name.indexOf($(".search-bar").val());
+      var str = name.toLowerCase();
+      var research = $(".search-bar").val();
+      var n = str.indexOf(research.toLowerCase());
       
       if ( n !== -1){
         $(this).parents(".info-chat").show();
