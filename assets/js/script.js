@@ -24,18 +24,17 @@ $(document).ready(function(){
   $(".search-bar").keyup(function(){
    
     $(".name").each(function(){
-      var target = $(".search-bar").val();
-      console.log(target);
       
-      var prova = [$(".name")];
-      var check = prova.includes(target);
-      console.log(check);
+      var name = $(this).text();
+      var n = name.indexOf($(".search-bar").val());
       
-      if ( check === true){
-        console.log("prova");
-      }
+      if ( n !== -1){
+        $(this).parents(".info-chat").show();
+      } else {
+          $(this).parents(".info-chat").hide();
+        }
     })
-    
+
   });
 
 });
