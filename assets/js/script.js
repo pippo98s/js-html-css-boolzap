@@ -19,4 +19,23 @@ $(document).ready(function(){
     $(".footer input").val("");
   });
 
+
+  // Ricerca utenti
+  $(".search-bar").keyup(function(){
+   
+    $(".name").each(function(){
+      var target = $(".search-bar").val();
+      console.log(target);
+      
+      var prova = [$(".name")];
+      var check = prova.includes(target);
+      console.log(check);
+      
+      if ( check === true){
+        console.log("prova");
+      }
+    })
+    
+  });
+
 });
