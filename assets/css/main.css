@@ -28,6 +28,14 @@
   border-radius: 50%;
 }
 
+.d-none{
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
 /* /general rules */
 
 /* left side */
