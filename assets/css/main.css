@@ -172,7 +172,8 @@
   width: 100%;
 }
 
-.user-sms p{
+.user-sms-sent{
+  min-width: 90px;
   max-width: 50%;
   word-break: break-all;
   display: inline-block;
@@ -181,12 +182,22 @@
   background-color: chartreuse;
 }
 
+.text{
+  text-align: start;
+}
+
+.time{
+  text-align: end;
+  font-size: 0.8em;
+}
+
 .pc-sms{
   text-align: start;
   width: 100%;
 }
 
-.pc-sms p{
+.pc-sms-sent{
+  min-width: 90px;
   max-width: 50%;
   word-break: break-all;
   display: inline-block;

@@ -21,7 +21,7 @@ $(document).ready(function () {
   // mostra chat
   $(".info-chat").click( function(){
 
-    var chatAttiva = $("#right-side .chat.active");
+    var chatAttiva = $("#right-side .chat-contenitor.active");
     var array = ["michele", "fabio", "samuele", "alessandro", "claudia", "davide", "federico", "cj"]
     
 
@@ -29,13 +29,13 @@ $(document).ready(function () {
     chatAttiva.addClass("d-none")
 
     var i = 0;
-    while ( i<array.length) {
+    while ( i < array.length) {
       if ($(this).is("[riferimento=" + array[i] + "]")) {
-        $(".chat" + "." + array[i] + "").addClass("active");
+        $(".chat-contenitor" + "." + array[i] + "").addClass("active");
       } 
       i++;
     }
-  })
+  });
 
 });
 
@@ -46,17 +46,21 @@ $(document).ready(function () {
 
 function sendSms() {
   var message = $(".footer input").val();
+  var ora = "10:20";
   if (message.length > 0 && !/^\s+$/.test(message)) {  // !/^\s+$/.test() checks there are only white spaces
     var element = $(".template .user-sms").clone();
-    element.html("<p>" + message + "</p>")
-    $(".chat.active").append(element);
+    element.find(".text").append(message);
+    element.find(".time").append(ora);
+    $(".chat-contenitor.active .chat").append(element);
 
     // risposta automatica dopo un secondo
     setTimeout(function () {
       var smsDefault = "ok";
+      var ora = "10:40";
       var pc = $(".template .pc-sms").clone();
-      pc.html("<p>" + smsDefault + "</p>");
-      $(".chat.active").append(pc);
+      pc.find(".text").append(smsDefault);
+      pc.find(".time").append(ora);
+      $(".chat-contenitor.active .chat").append(pc);
 
     }, 1000);
   }
