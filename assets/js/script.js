@@ -46,20 +46,18 @@ $(document).ready(function () {
 
 function sendSms() {
   var message = $(".footer input").val();
-  var ora = "10:20";
   if (message.length > 0 && !/^\s+$/.test(message)) {  // !/^\s+$/.test() checks there are only white spaces
     var element = $(".template .user-sms").clone();
     element.find(".text").append(message);
-    element.find(".time").append(ora);
+    element.find(".time").append(getHours() + ":" + getMinutes());
     $(".chat-contenitor.active .chat").append(element);
 
     // risposta automatica dopo un secondo
     setTimeout(function () {
       var smsDefault = "ok";
-      var ora = "10:40";
       var pc = $(".template .pc-sms").clone();
       pc.find(".text").append(smsDefault);
-      pc.find(".time").append(ora);
+      pc.find(".time").append(getHours() + ":" + getMinutes());
       $(".chat-contenitor.active .chat").append(pc);
 
     }, 1000);
@@ -82,4 +80,18 @@ function searchChat() {
       $(this).parents(".info-chat").hide();
     }
   })
+}
+
+// funzione per l'ora
+
+function getHours(){
+  var d = new Date();
+  return d.getHours();
+}
+
+// funzione per i minuti
+
+function getMinutes() {
+  var d = new Date();
+  return d.getMinutes();
 }
