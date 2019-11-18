@@ -56,7 +56,7 @@
             <img class="avatar" src="assets/img/michele.svg" alt="img">
             <div class="ml-15">
               <p class="name">Michele</p>
-              <p>Ciao</p>
+              <p class="preview">Ciao</p>
             </div>
           </div>
           <div>
@@ -177,19 +177,28 @@
         </div>
         <!-- section to read the chat -->
         <div class="chat active michele">
-          <div class="user-sms">
+          <div class="user-sms sms-contenitor">
             <div class="user-sms-sent">
               <p class="text">Ciao, Michele!</p>
               <p class="time">10:10</p>
+              <i class="dropdown fas fa-angle-down"></i>
+              <div class="dropdown-item">
+                <p>delete message</p>
+              </div>
             </div>
           </div>
-          <div class="pc-sms">
+          <div class="pc-sms sms-contenitor">
             <div class="pc-sms-sent">
               <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat minus quidem eveniet culpa
                 asperiores quas
                 natus reprehenderit repellendus ducimus vitae delectus doloremque soluta, a ipsa aliquam, unde, nemo maiores
                 qui!</p>
               <p class="time">10:09</p>
+              <i class="dropdown fas fa-angle-down"></i>
+              <i class="dropdown fas fa-angle-down"></i>
+              <div class="dropdown-item">
+                <p>delete message</p>
+              </div>
             </div>
           </div>
         </div>
@@ -390,18 +399,23 @@
 
   <!-- template display none -->
   <div class="template">
-    <div class="user-sms">
+    <div class="user-sms sms-contenitor">
       <div class="user-sms-sent">
         <p class="text"></p>
         <p class="time"></p>
+        <i class="dropdown fas fa-angle-down"></i>
+        <div class="dropdown-item">
+          <p>delete message</p>
+        </div>
       </div>
     </div>
   </div>
   <div class="template">
-    <div class="pc-sms">
+    <div class="pc-sms sms-contenitor">
       <div class="pc-sms-sent">
         <p class="text"></p>
         <p class="time"></p>
+        <i class="dropdown fas fa-angle-down"></i>
       </div>
     </div>
   </div>

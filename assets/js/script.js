@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+  $(".dropdown").on("click", function () {
+    $(this).next(".dropdown-item").toggle();
+  })
+
+  $(".dropdown-item").on("click", "p", function(){
+    $(this).parents(".sms-contenitor").remove();
+  })
+  
+
   // invio messaggio al click
   $("#send").click(function () {
     sendSms();
@@ -51,6 +60,8 @@ function sendSms() {
     element.find(".text").append(message);
     element.find(".time").append(getHours() + ":" + getMinutes());
     $(".chat-contenitor.active .chat").append(element);
+    $(".chat-contenitor.active .chat").scrollTop(100000000000000);
+
 
     // risposta automatica dopo un secondo
     setTimeout(function () {
@@ -59,9 +70,10 @@ function sendSms() {
       pc.find(".text").append(smsDefault);
       pc.find(".time").append(getHours() + ":" + getMinutes());
       $(".chat-contenitor.active .chat").append(pc);
-
+      $(".chat-contenitor.active .chat").scrollTop(100000000000);
     }, 1000);
   }
+  
   $(".footer input").val("");
 }
 
@@ -86,12 +98,21 @@ function searchChat() {
 
 function getHours(){
   var d = new Date();
-  return d.getHours();
+  if (d.getHours() < 10) {
+    return "0" + d.getHours();
+  } else {
+    return d.getHours();
+  }
 }
 
 // funzione per i minuti
 
 function getMinutes() {
   var d = new Date();
-  return d.getMinutes();
+  if (d.getMinutes() < 10){
+    return "0" + d.getMinutes();
+  } else {
+    return d.getMinutes();
+  }
+  
 }

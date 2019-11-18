@@ -176,6 +176,7 @@
   min-width: 90px;
   max-width: 50%;
   word-break: break-all;
+  position: relative;
   display: inline-block;
   padding: 8px;
   margin: 20px 30px;
@@ -184,11 +185,31 @@
 
 .text{
   text-align: start;
+  padding-right: 5px;
 }
 
 .time{
   text-align: end;
   font-size: 0.8em;
+}
+
+.dropdown{
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 20px;
+  opacity: 0;
+}
+
+.dropdown-item{
+  background-color: white;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 5px;
+  height: 30px;
+  display: none;
 }
 
 .pc-sms{
@@ -200,10 +221,18 @@
   min-width: 90px;
   max-width: 50%;
   word-break: break-all;
+  position: relative;
   display: inline-block;
   padding: 8px;
   margin: 20px 30px;
   background-color: #fff;
+}
+
+
+
+.user-sms-sent:hover .dropdown,
+.pc-sms-sent:hover .dropdown{
+  opacity: 1;
 }
 
 
