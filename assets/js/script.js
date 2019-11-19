@@ -1,14 +1,5 @@
 $(document).ready(function () {
 
-  $(".dropdown").on("click", function () {
-    $(this).next(".dropdown-item").toggle();
-  })
-
-  $(".dropdown-item").on("click", "p", function(){
-    $(this).parents(".sms-contenitor").remove();
-  })
-  
-
   // invio messaggio al click
   $("#send").click(function () {
     sendSms();
@@ -26,25 +17,11 @@ $(document).ready(function () {
     searchChat();
   });
 
+  // mostra chat attiva
+  showChat();
 
-  // mostra chat
-  $(".info-chat").click( function(){
-
-    var chatAttiva = $("#right-side .chat-contenitor.active");
-    var array = ["michele", "fabio", "samuele", "alessandro", "claudia", "davide", "federico", "cj"]
-    
-
-    chatAttiva.removeClass("active");
-    chatAttiva.addClass("d-none")
-
-    var i = 0;
-    while ( i < array.length) {
-      if ($(this).is("[riferimento=" + array[i] + "]")) {
-        $(".chat-contenitor" + "." + array[i] + "").addClass("active");
-      } 
-      i++;
-    }
-  });
+  // cancella un messaggio
+  deleteMessage();
 
 });
 
@@ -91,6 +68,37 @@ function searchChat() {
     } else {
       $(this).parents(".info-chat").hide();
     }
+  })
+}
+
+// funzione per mostrare la chat attiva
+function showChat(){
+  $(".info-chat").click(function () {
+    var chatAttiva = $("#right-side .chat-contenitor.active");
+    var array = ["michele", "fabio", "samuele", "alessandro", "claudia", "davide", "federico", "cj"]
+
+    chatAttiva.removeClass("active");
+    chatAttiva.addClass("d-none")
+
+    var i = 0;
+    while (i < array.length) {
+      if ($(this).is("[riferimento=" + array[i] + "]")) {
+        $(".chat-contenitor" + "." + array[i] + "").addClass("active");
+      }
+      i++;
+    }
+  });
+}
+
+// funzione per cancellare il messaggio
+
+function deleteMessage(){
+  $(document).on("click", ".dropdown", function () {
+    $(this).next(".dropdown-item").toggle();
+  })
+
+  $(document).on("click", ".dropdown-item p", function () {
+    $(this).parents(".sms-contenitor").remove();
   })
 }
 
