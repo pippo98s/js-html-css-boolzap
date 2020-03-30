@@ -163,7 +163,7 @@
 .chat{
   height: calc(100vh - 120px);
   min-height: 365px;
-  background: url(https://web.whatsapp.com/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png) #e5ddd5;
+  background: url(../img/bg-chat.png) #e5ddd5;
   overflow-y: scroll;
 }
 

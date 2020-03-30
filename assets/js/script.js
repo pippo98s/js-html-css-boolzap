@@ -75,18 +75,14 @@ function searchChat() {
 function showChat(){
   $(".info-chat").click(function () {
     var chatAttiva = $("#right-side .chat-contenitor.active");
-    var array = ["michele", "fabio", "samuele", "alessandro", "claudia", "davide", "federico", "cj"]
+    var riferimento = ($(this).attr("riferimento"));
 
     chatAttiva.removeClass("active");
-    chatAttiva.addClass("d-none")
+    chatAttiva.addClass("d-none");
 
-    var i = 0;
-    while (i < array.length) {
-      if ($(this).is("[riferimento=" + array[i] + "]")) {
-        $(".chat-contenitor" + "." + array[i] + "").addClass("active");
-      }
-      i++;
-    }
+    $(".chat-contenitor" + "." + riferimento + "").addClass("active");
+    $(".chat-contenitor" + "." + riferimento + "").removeClass("d-none");
+     
   });
 }
 
