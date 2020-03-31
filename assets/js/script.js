@@ -23,6 +23,21 @@ $(document).ready(function () {
   // cancella un messaggio
   deleteMessage();
 
+  // ritorno dalla chat alla lista per device sotto i 662px di larghezza 
+  $(".arrow-chat").click(function () {
+    if (window.matchMedia("(max-width: 662px)").matches) {
+      $("#right-side").addClass("d-none-important");
+      $("#left-side").addClass("active-important");
+    }
+  });
+  
+
+  $(window).resize(function () {
+    if (window.matchMedia("(min-width: 662px)").matches){
+     $("#right-side").removeClass("d-none-important");
+     $("#left-side").removeClass("active-important");
+   }
+  });
 });
 
 
@@ -74,20 +89,29 @@ function searchChat() {
 // funzione per mostrare la chat attiva
 function showChat(){
   $(".info-chat").click(function () {
-    var chatAttiva = $("#right-side .chat-contenitor.active");
-    var riferimento = ($(this).attr("riferimento"));
-
-    chatAttiva.removeClass("active");
-    chatAttiva.addClass("d-none");
-
-    $(".chat-contenitor" + "." + riferimento + "").addClass("active");
-    $(".chat-contenitor" + "." + riferimento + "").removeClass("d-none");
-     
+    if (window.matchMedia("(max-width: 662px)").matches) {
+      $("#left-side").removeClass("active-important");
+      $("#right-side").removeClass("d-none-important");
+      showChatHelper($(this));
+    } else {
+      showChatHelper($(this));
+    }
   });
 }
 
-// funzione per cancellare il messaggio
+// seconda parte della funzione showChat
+function showChatHelper(_this){
+  var chatAttiva = $("#right-side .chat-contenitor.active");
+  var riferimento = (_this.attr("riferimento"));
 
+  chatAttiva.removeClass("active");
+  chatAttiva.addClass("d-none");
+
+  $(".chat-contenitor" + "." + riferimento + "").addClass("active");
+  $(".chat-contenitor" + "." + riferimento + "").removeClass("d-none");
+}
+
+// funzione per cancellare il messaggio
 function deleteMessage(){
   $(document).on("click", ".dropdown", function () {
     $(this).next(".dropdown-item").toggle();

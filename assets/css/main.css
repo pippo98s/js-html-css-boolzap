@@ -13,6 +13,10 @@
   display: flex;
 }
 
+.align-items{
+  align-items: center;
+}
+
 .ml-15{
   margin-left: 15px;
 }
@@ -28,13 +32,6 @@
   border-radius: 50%;
 }
 
-.d-none{
-  display: none;
-}
-
-.active{
-  display: block;
-}
 
 /* /general rules */
 
@@ -121,7 +118,7 @@
 /* friend list */
 .list{
   height: calc(100vh - 185px);
-  min-height: 300px;
+  min-height: 180px;
   overflow-y: scroll;
   background-color: #fff;
 }
@@ -147,6 +144,18 @@
   height: 100vh;
 }
 
+.arrow-chat{
+  display: none;
+  margin: 0 10px;
+  font-size: larger;
+  color: #808080;
+  cursor: pointer;
+}
+
+.arrow-chat:hover{
+  color: #000;
+}
+
 .name-user{
   font-size: 1.5em;
   cursor: pointer;
@@ -162,7 +171,7 @@
 /* chat */
 .chat{
   height: calc(100vh - 120px);
-  min-height: 365px;
+  min-height: 155px;
   background: url(../img/bg-chat.png) #e5ddd5;
   overflow-y: scroll;
 }
@@ -266,3 +275,57 @@
 .template{
   display: none;
 }
+
+.d-none{
+  display: none;
+}
+
+.d-none-important{
+  display: none !important;
+}
+
+.active{
+  display: block;
+}
+
+.active-important{
+  display: block !important;
+}
+
+
+@media screen and (max-width:992px){
+
+  .notification{
+    display: none;
+  }
+
+  .list{
+    height: calc(100vh - 95px);
+  }
+} 
+
+@media screen and (max-width:662px){
+
+  #right-side,
+  #left-side{
+    width: 100%;
+  }
+
+  #left-side{
+   display: none;
+  }
+
+  .arrow-chat{
+  display: block;
+  }
+
+  .chat-contenitor .avatar{
+    margin-left: 0;
+  }
+
+  .user-sms-sent,
+  .pc-sms-sent{
+    max-width: 80%;
+  }
+
+} 
